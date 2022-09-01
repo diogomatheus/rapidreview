@@ -1,0 +1,65 @@
+{
+  "name": "rapidreview",
+  "version": "1.0.0",
+  "description": "A command-line interface (CLI) to support rapid review studies.",
+  "license": "MIT",
+  "author": {
+    "name": "Diogo Matheus Costa",
+    "email": "dm.matheus@gmail.com",
+    "url": "http://diogomatheus.com.br"
+  },
+  "funding": "https://github.com/sponsors/diogomatheus",
+  "main": "src/rapidreview.js",
+  "bin": {
+    "@diogomatheus/rapidreview": "./bin/run",
+    "rapidreview": "./bin/run"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "keywords": [
+    "literature review",
+    "rapid review",
+    "bibtex",
+    "jabref",
+    "cli"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/diogomatheus/rapidreview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diogomatheus/rapidreview"
+  },
+  "bugs": "https://github.com/diogomatheus/rapidreview/issues",
+  "dependencies": {
+    "bibtex-parse-js": "0.0.24",
+    "commander": "^9.4.0",
+    "inquirer": "^8.0.0",
+    "listr": "^0.14.3",
+    "listr-silent-renderer": "^1.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
+    "rewire": "^6.0.0",
+    "sinon": "^14.0.0"
+  },
+  "scripts": {
+    "eslint": "npx eslint .",
+    "prettier-check": "npx prettier --check .",
+    "prettier-write": "npx prettier --write .",
+    "test": "npx mocha './test/**/*.spec.js'",
+    "test-watch": "npx mocha './test/**/*.spec.js' --watch",
+    "coverage": "nyc npm run test"
+  }
+}

@@ -1,0 +1,15 @@
+.github
+.nyc_output
+bin
+coverage
+src/assets
+node_modules
+test
+package.json
+package-lock.json
+.nycrc
+.prettierrc.json
+.eslintrc.json
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+README.md

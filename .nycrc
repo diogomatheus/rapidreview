@@ -1,0 +1,6 @@
+{
+  "all": true,
+  "reporter": ["text"],
+  "include": ["src/**/*.js"],
+  "exclude": ["src/cli/bootstrap.js", "test/**/*.spec.js"]
+}
