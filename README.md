@@ -1,6 +1,6 @@
 # Rapid Review CLI
 
-[![Build Status](https://github.com/diogomatheus/rapidreview/workflows/Continuous integration workflow (Node.js)/badge.svg)](https://github.com/diogomatheus/rapidreview/actions/workflows/continuous-integration.yml)
+[![Build Status](https://github.com/diogomatheus/rapidreview/workflows/Continuous%20integration%20workflow%20%28Node.js%29/badge.svg)](https://github.com/diogomatheus/rapidreview/actions/workflows/continuous-integration.yml)
 [![Coverage Status](https://coveralls.io/repos/github/diogomatheus/rapidreview/badge.svg)](https://coveralls.io/github/diogomatheus/rapidreview)
 [![NPM Version](https://img.shields.io/npm/v/rapidreview.svg?style=flat)](https://www.npmjs.org/package/rapidreview)
 [![Package License](https://img.shields.io/npm/l/rapidreview.svg?style=flat)](https://www.npmjs.org/package/rapidreview)
