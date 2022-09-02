@@ -127,7 +127,7 @@ async function _execute(args, tasks) {
   const listr = new Listr(tasks, listrOptions);
   const context = await listr.run();
   return context.response;
-};
+}
 
 /**
  * @description Define the Listr renderer.
@@ -139,4 +139,4 @@ async function _execute(args, tasks) {
  */
 function _defineListrRenderer(args) {
   return args.suppressOutput === true ? listrSilentRenderer : 'default';
-};
+}

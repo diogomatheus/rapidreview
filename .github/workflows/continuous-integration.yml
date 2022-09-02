@@ -20,7 +20,27 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm ci
       run: npm ci
-    - name: npm test
-      run: npm test
     - name: npm run eslint
       run: npm run eslint
+    - name: npm run test-coverage
+      run: npm run test-coverage
+    - name: npm run test-report
+      run: npm run test-report
+    - name: Coveralls
+      uses: coverallsapp/github-action@v1.1.0
+      env:
+        NODE_COVERALLS_DEBUG: 1
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel: true
+        flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
+
+  finish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@v1.1.0
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true

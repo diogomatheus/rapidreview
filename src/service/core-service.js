@@ -274,7 +274,7 @@ async function _parseBibFile(file, source = 'input') {
 
   const documents = await bibtexService.bibtex2object(file.contents);
   return { source, systempath: file.systempath, name: file.name, documents };
-};
+}
 
 /**
  * @description Parse bib files.
@@ -291,4 +291,4 @@ async function _parseBibFiles(files, source = 'directory') {
   }
 
   return Promise.all(files.map(async (file) => _parseBibFile(file, source)));
-};
+}

@@ -87,7 +87,8 @@ module.exports.directoryExists = async (systempath) => {
 module.exports.readDirectoryBibFiles = async (systempath, exclude) => {
   const directoryItems = await _readDirectory(systempath);
   const bibFiles = directoryItems.filter(
-    (item) => !item.isDirectory() && 
+    (item) =>
+      !item.isDirectory() &&
       (typeof exclude !== 'string' || path.basename(item.name) !== path.basename(exclude)) &&
       path.extname(item.name) === '.bib'
   );
@@ -98,7 +99,6 @@ module.exports.readDirectoryBibFiles = async (systempath, exclude) => {
   }
 
   return [];
-
 };
 
 /**
@@ -123,7 +123,7 @@ module.exports.saveFile = async (systempath, contents) => fs.promises.writeFile(
 async function _readFile(systempath) {
   const contents = await fs.promises.readFile(systempath, 'utf-8');
   return { systempath, name: path.basename(systempath), contents };
-};
+}
 
 /**
  * @description Read all directory files and subdirectories.
@@ -134,5 +134,5 @@ async function _readFile(systempath) {
  * @return {Promise<array>} Array of files or subdirectories.
  */
 async function _readDirectory(systempath) {
-  return fs.promises.readdir(systempath, { withFileTypes: true })
+  return fs.promises.readdir(systempath, { withFileTypes: true });
 }

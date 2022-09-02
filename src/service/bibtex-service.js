@@ -203,7 +203,7 @@ function _prepareAnalysisFields(document) {
     document.entryTags.reading_criteria = 'TO DO';
   }
   return document;
-};
+}
 
 /**
  * @description Analyze if document is inconsistent.
@@ -214,15 +214,15 @@ function _prepareAnalysisFields(document) {
  * @return {boolean} Inconsistent flag.
  */
 function _isInconsistent(document) {
-  return document.entryTags.title_criteria === 'TO DO' &&
-    (
-      typeof document.entryTags.year !== 'string' ||
+  return (
+    document.entryTags.title_criteria === 'TO DO' &&
+    (typeof document.entryTags.year !== 'string' ||
       document.entryTags.year.trim().length === 0 ||
       typeof document.entryTags.title !== 'string' ||
       document.entryTags.title.trim().length === 0 ||
       typeof document.entryTags.author !== 'string' ||
-      document.entryTags.author.trim().length === 0
-    );
+      document.entryTags.author.trim().length === 0)
+  );
 }
 
 /**
@@ -240,7 +240,7 @@ function _extractDocuments(bibs) {
     documents = bibs.reduce((array, bib) => array.concat(_documents(bib)), []);
   }
   return documents;
-};
+}
 
 /**
  * @description Compare objects (i.e., documents).
@@ -265,11 +265,13 @@ function _isEqual(object, other) {
  * @return {boolean} Equality flag.
  */
 function _isDOIEqual(object, other) {
-  return !_isInvalid(object) &&
+  return (
+    !_isInvalid(object) &&
     !_isInvalid(other) &&
     typeof object.entryTags.doi === 'string' &&
     typeof other.entryTags.doi === 'string' &&
-    object.entryTags.doi.trim().toUpperCase() === other.entryTags.doi.trim().toUpperCase();
+    object.entryTags.doi.trim().toUpperCase() === other.entryTags.doi.trim().toUpperCase()
+  );
 }
 
 /**
@@ -296,7 +298,7 @@ function _isCriteriaEqual(object, other) {
     typeof other.entryTags.title === 'string' &&
     _slugifyTitle(object.entryTags.title) === _slugifyTitle(other.entryTags.title)
   );
-};
+}
 
 /**
  * @description Analyze if object (i.e., document) basic structure is invalid.
@@ -307,10 +309,12 @@ function _isCriteriaEqual(object, other) {
  * @return {boolean} Invalid flag.
  */
 function _isInvalid(document) {
-  return document === null ||
+  return (
+    document === null ||
     typeof document !== 'object' ||
     document.entryTags === null ||
-    typeof document.entryTags !== 'object';
+    typeof document.entryTags !== 'object'
+  );
 }
 
 /**
@@ -338,7 +342,7 @@ function _buildBackwardSnowballingScopusURL(documents) {
   }
 
   return scopusURL;
-};
+}
 
 /**
  * @description Build snowballing forward Scopus URL.
@@ -360,7 +364,7 @@ function _buildForwardSnowballingScopusURL(documents) {
     .concat(`&s=REFEID%28${query}%29&origin=resultslist`)
     .concat(`&citeCnt=${eids.length}`)
     .concat(`&mciteCt=${eids.length}`);
-};
+}
 
 /**
  * @description Extract Scopus eids.
@@ -385,4 +389,4 @@ function _extractScopusEids(documents) {
     }
   });
   return eids;
-};
+}

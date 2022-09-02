@@ -156,7 +156,7 @@ function _args(args) {
   args.suppressOutput = typeof args === 'object' && args.suppressOutput === true;
   args.suppressWriting = typeof args === 'object' && args.suppressWriting === true;
   return args;
-};
+}
 
 /**
  * @description Input validation.
@@ -205,4 +205,3 @@ async function _isDirectoryValid(path) {
 function _shouldPromptOutput(args) {
   return typeof args !== 'object' || args.overwrite !== true;
 }
-
