@@ -2,7 +2,7 @@
  * Rapid Review Service BibTex Module.
  * @module rapidreview/service/bibtex-service.js
  */
-const bibtexParser = require('bibtex-parse-js');
+const bibtexParser = require('@orcid/bibtex-parse-js');
 
 /**
  * @description Convert BibTex to array of objects (i.e., documents).

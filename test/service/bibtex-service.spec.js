@@ -1,7 +1,7 @@
 const rewire = require("rewire");
 const sinon = require('sinon');
 const expect = require('../chai').expect;
-const bibtexParser = require('bibtex-parse-js');
+const bibtexParser = require('@orcid/bibtex-parse-js');
 const bibtexService = rewire('../../src/service/bibtex-service');
 
 describe('rapidreview/service/bibtex-service.js', () => {
