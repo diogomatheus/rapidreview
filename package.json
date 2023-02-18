@@ -1,7 +1,7 @@
 {
   "name": "rapidreview",
   "version": "1.0.1",
-  "description": "A command-line interface (CLI) to support rapid review studies.",
+  "description": "A command-line interface (CLI) to support literature review studies.",
   "license": "MIT",
   "author": {
     "name": "Diogo Matheus Costa",

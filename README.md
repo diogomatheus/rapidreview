@@ -13,7 +13,7 @@ Rapid Review was designed to work with [JabRef tool][jabref] through a minimalis
 
 ### Prerequisites
 
-Install [Node.js][node.js] which includes [Node Package Manager][npm]
+Install [Node.js][node.js] (>=12, LTS version) which includes [Node Package Manager][npm]
 
 ### NPM Release
 

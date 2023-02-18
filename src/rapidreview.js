@@ -135,7 +135,7 @@ async function _execute(args, tasks) {
  * @sync
  *
  * @param {object} args - Arguments.
- * @return {Promise<mixed>} Listr renderer.
+ * @return {Promise<any>} Listr renderer.
  */
 function _defineListrRenderer(args) {
   return args.suppressOutput === true ? listrSilentRenderer : 'default';
